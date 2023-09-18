@@ -1,0 +1,12 @@
+D:\Route vids\C# AhmedNasr\08 ASP.NET Core Web APIs\Talabat.Application\Talabat.Core\bin\Debug\net6.0\Talabat.Core.deps.json
+D:\Route vids\C# AhmedNasr\08 ASP.NET Core Web APIs\Talabat.Application\Talabat.Core\bin\Debug\net6.0\Talabat.Core.dll
+D:\Route vids\C# AhmedNasr\08 ASP.NET Core Web APIs\Talabat.Application\Talabat.Core\bin\Debug\net6.0\Talabat.Core.pdb
+D:\Route vids\C# AhmedNasr\08 ASP.NET Core Web APIs\Talabat.Application\Talabat.Core\obj\Debug\net6.0\Talabat.Core.csproj.AssemblyReference.cache
+D:\Route vids\C# AhmedNasr\08 ASP.NET Core Web APIs\Talabat.Application\Talabat.Core\obj\Debug\net6.0\Talabat.Core.GeneratedMSBuildEditorConfig.editorconfig
+D:\Route vids\C# AhmedNasr\08 ASP.NET Core Web APIs\Talabat.Application\Talabat.Core\obj\Debug\net6.0\Talabat.Core.AssemblyInfoInputs.cache
+D:\Route vids\C# AhmedNasr\08 ASP.NET Core Web APIs\Talabat.Application\Talabat.Core\obj\Debug\net6.0\Talabat.Core.AssemblyInfo.cs
+D:\Route vids\C# AhmedNasr\08 ASP.NET Core Web APIs\Talabat.Application\Talabat.Core\obj\Debug\net6.0\Talabat.Core.csproj.CoreCompileInputs.cache
+D:\Route vids\C# AhmedNasr\08 ASP.NET Core Web APIs\Talabat.Application\Talabat.Core\obj\Debug\net6.0\Talabat.Core.dll
+D:\Route vids\C# AhmedNasr\08 ASP.NET Core Web APIs\Talabat.Application\Talabat.Core\obj\Debug\net6.0\refint\Talabat.Core.dll
+D:\Route vids\C# AhmedNasr\08 ASP.NET Core Web APIs\Talabat.Application\Talabat.Core\obj\Debug\net6.0\Talabat.Core.pdb
+D:\Route vids\C# AhmedNasr\08 ASP.NET Core Web APIs\Talabat.Application\Talabat.Core\obj\Debug\net6.0\ref\Talabat.Core.dll

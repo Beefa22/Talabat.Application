@@ -1,0 +1,15 @@
+D:\Route vids\C# AhmedNasr\08 ASP.NET Core Web APIs\Talabat.Application\Talabat.Repository\bin\Debug\net6.0\Talabat.Repository.deps.json
+D:\Route vids\C# AhmedNasr\08 ASP.NET Core Web APIs\Talabat.Application\Talabat.Repository\bin\Debug\net6.0\Talabat.Repository.dll
+D:\Route vids\C# AhmedNasr\08 ASP.NET Core Web APIs\Talabat.Application\Talabat.Repository\bin\Debug\net6.0\Talabat.Repository.pdb
+D:\Route vids\C# AhmedNasr\08 ASP.NET Core Web APIs\Talabat.Application\Talabat.Repository\bin\Debug\net6.0\Talabat.Core.dll
+D:\Route vids\C# AhmedNasr\08 ASP.NET Core Web APIs\Talabat.Application\Talabat.Repository\bin\Debug\net6.0\Talabat.Core.pdb
+D:\Route vids\C# AhmedNasr\08 ASP.NET Core Web APIs\Talabat.Application\Talabat.Repository\obj\Debug\net6.0\Talabat.Repository.csproj.AssemblyReference.cache
+D:\Route vids\C# AhmedNasr\08 ASP.NET Core Web APIs\Talabat.Application\Talabat.Repository\obj\Debug\net6.0\Talabat.Repository.GeneratedMSBuildEditorConfig.editorconfig
+D:\Route vids\C# AhmedNasr\08 ASP.NET Core Web APIs\Talabat.Application\Talabat.Repository\obj\Debug\net6.0\Talabat.Repository.AssemblyInfoInputs.cache
+D:\Route vids\C# AhmedNasr\08 ASP.NET Core Web APIs\Talabat.Application\Talabat.Repository\obj\Debug\net6.0\Talabat.Repository.AssemblyInfo.cs
+D:\Route vids\C# AhmedNasr\08 ASP.NET Core Web APIs\Talabat.Application\Talabat.Repository\obj\Debug\net6.0\Talabat.Repository.csproj.CoreCompileInputs.cache
+D:\Route vids\C# AhmedNasr\08 ASP.NET Core Web APIs\Talabat.Application\Talabat.Repository\obj\Debug\net6.0\Talabat.Repository.csproj.CopyComplete
+D:\Route vids\C# AhmedNasr\08 ASP.NET Core Web APIs\Talabat.Application\Talabat.Repository\obj\Debug\net6.0\Talabat.Repository.dll
+D:\Route vids\C# AhmedNasr\08 ASP.NET Core Web APIs\Talabat.Application\Talabat.Repository\obj\Debug\net6.0\refint\Talabat.Repository.dll
+D:\Route vids\C# AhmedNasr\08 ASP.NET Core Web APIs\Talabat.Application\Talabat.Repository\obj\Debug\net6.0\Talabat.Repository.pdb
+D:\Route vids\C# AhmedNasr\08 ASP.NET Core Web APIs\Talabat.Application\Talabat.Repository\obj\Debug\net6.0\ref\Talabat.Repository.dll
