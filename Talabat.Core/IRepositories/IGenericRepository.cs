@@ -13,6 +13,9 @@ namespace Talabat.Core.Interfaces
 		//Static signiture 
 		Task<IReadOnlyList<T>> GetAllAsync();
 		Task<T> GetByIdAsync(int id);
+		Task Add(T entity);
+		void update(T entity);
+		void Delete(T entity);
 
 		//Dynamic signiture
 		Task<IReadOnlyList<T>> GetAllWithSpecAsync(ISepcification<T> spec);
