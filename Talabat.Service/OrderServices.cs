@@ -81,6 +81,12 @@ namespace Talabat.Service
 
 		}
 
+		public async Task<IReadOnlyList<DeliveryMethod>> GetDeliveryMethodsAsync()
+		{
+			var deliveryMethods = await _unitOfWork.Repository<DeliveryMethod>().GetAllAsync();
+			return deliveryMethods;
+		}
+
 		public async Task<Order> GetOrderByIdForUserAsync(string buyerEmail, int orderId)
 		{
 			var spec = new OrderSpecification(buyerEmail,orderId);

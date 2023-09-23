@@ -74,5 +74,13 @@ namespace Talabat.APIs.Controllers
 
 			return Ok(order);
 		}
+
+		[HttpGet("deliverymethods")]
+		public async Task<ActionResult<IReadOnlyList<DeliveryMethod>>> GetDeliveryMethod()
+		{
+			var deliveryMethods = await _orderService.GetDeliveryMethodsAsync();
+
+			return Ok(deliveryMethods);
+		}
 	}
 }
