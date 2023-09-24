@@ -33,7 +33,7 @@ namespace Talabat.APIs.Controllers
 		[ProducesResponseType(typeof(ApiResponse),StatusCodes.Status400BadRequest)]
 
 		[HttpPost]
-		public async Task<ActionResult<Order>> CreateOrder(OrderDto orderDto)
+		public async Task<ActionResult<OrderToReturnDto>> CreateOrder(OrderDto orderDto)
 		{
 			var buyerEmail = User.FindFirstValue(ClaimTypes.Email);
 
@@ -43,7 +43,7 @@ namespace Talabat.APIs.Controllers
 
 			if (order is null) return BadRequest(new ApiResponse(400));
 
-			return Ok(order);
+			return Ok(_mapper.Map<Order,OrderToReturnDto>(order));
 		}
 
 		[ProducesResponseType(typeof(Order), StatusCodes.Status200OK)]
@@ -57,7 +57,7 @@ namespace Talabat.APIs.Controllers
 
 			if (orders is null) return NotFound(new ApiResponse(404));
 
-			return Ok(orders);
+			return Ok(_mapper.Map<IReadOnlyList<Order>, IReadOnlyList<OrderToReturnDto>>(orders));
 		}
 
 		
@@ -72,7 +72,7 @@ namespace Talabat.APIs.Controllers
 
 			if (order is null) return NotFound(new ApiResponse(404));
 
-			return Ok(order);
+			return Ok(_mapper.Map<Order,OrderToReturnDto>(order));
 		}
 
 		[HttpGet("deliverymethods")]
