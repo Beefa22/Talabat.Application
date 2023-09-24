@@ -8,5 +8,10 @@ namespace Talabat.APIs.Dtos
 		[Required]
 		public string Id { get; set; }
 		public List<BasketItemsDto> Items { get; set; }
+
+		public string? PaymentIntentId { get; set; }
+		public string? ClientSecret { get; set; }
+		public int? DeliveryMethodId { get; set; }
+		public decimal ShippingCost { get; set; }
 	}
 }
