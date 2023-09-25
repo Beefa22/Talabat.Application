@@ -28,7 +28,7 @@ namespace Talabat.Core.Entities.Order_Aggregate
 		public DeliveryMethod DeliveryMethod { get; set; }//Navigational Pro [one]
 		public ICollection<OrderItem> Items { get; set; } = new HashSet<OrderItem>();//Navigational Prop [Many]
 		public decimal SubTotal { get; set; }
-		public string PaymentIntentId { get; set; } = string.Empty;
+		public string PaymentIntentId { get; set; } 
 		public decimal GetTotal()// Driven Attribute
 			=> SubTotal + DeliveryMethod.Cost;
 
