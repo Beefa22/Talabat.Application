@@ -40,7 +40,7 @@ namespace Talabat.Repository
 			return await ApplySpecification(spec).ToListAsync();
 		}
 
-		public async Task<T> GetByIdWithSpecAsync(ISepcification<T> spec)
+		public async Task<T> GetEntityWithSpecAsync(ISepcification<T> spec)
 		{
 			return await ApplySpecification(spec).FirstOrDefaultAsync();
 		}

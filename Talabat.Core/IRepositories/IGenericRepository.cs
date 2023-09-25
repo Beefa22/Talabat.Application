@@ -19,7 +19,7 @@ namespace Talabat.Core.Interfaces
 
 		//Dynamic signiture
 		Task<IReadOnlyList<T>> GetAllWithSpecAsync(ISepcification<T> spec);
-		Task<T> GetByIdWithSpecAsync(ISepcification<T> spec);
+		Task<T> GetEntityWithSpecAsync(ISepcification<T> spec);
 
 		Task<int> GetCountWithSpecAsync(ISepcification<T> spec);
 

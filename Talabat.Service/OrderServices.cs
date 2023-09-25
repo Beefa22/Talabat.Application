@@ -19,6 +19,7 @@ namespace Talabat.Service
 	{
 		private readonly IBasketRepository _basketRepo;
 		private readonly IUnitOfWork _unitOfWork;
+		private readonly IPaymentService _paymentService;
 
 		////private readonly IGenericRepository<Product> _productRepo;
 		////private readonly IGenericRepository<DeliveryMethod> _deliveryMethod;
@@ -26,15 +27,16 @@ namespace Talabat.Service
 
 		public OrderServices(
 			IBasketRepository basketRepo,
-			IUnitOfWork unitOfWork
-
+			IUnitOfWork unitOfWork,
+			IPaymentService paymentService
 			///IGenericRepository<Product> productRepo,
 			///IGenericRepository<DeliveryMethod> deliveryMethod,
 			///IGenericRepository<Order> orderRepo
 			)
 		{
 			_unitOfWork = unitOfWork;
-			 _basketRepo = basketRepo;
+			_paymentService = paymentService;
+			_basketRepo = basketRepo;
 
 			///_productRepo = productRepo;
 			///_deliveryMethod = deliveryMethod;
@@ -71,7 +73,16 @@ namespace Talabat.Service
 			var deliveryMethod = await _unitOfWork.Repository<DeliveryMethod>().GetByIdAsync(deliveryMethodId);
 
 			//Create Order
-			var order = new Order(buyerEmail, shippingAddress, deliveryMethod, orderItems, subTotal);
+			var spec = new OrderWithPaymentIntentIdSpecification(basket.PaymentIntentId);
+
+			var existingOrder = await _unitOfWork.Repository<Order>().GetEntityWithSpecAsync(spec);
+			if (existingOrder is not null)
+			{
+				 _unitOfWork.Repository<Order>().Delete(existingOrder);
+				await _paymentService.CreateOrUpdatePaymentIntent(basketId);
+			}
+				
+			var order = new Order(buyerEmail, shippingAddress, deliveryMethod, orderItems, subTotal,basket.PaymentIntentId);
 			await _unitOfWork.Repository<Order>().Add(order);
 
 			//Save Changes in DataBase
@@ -91,7 +102,7 @@ namespace Talabat.Service
 		{
 			var spec = new OrderSpecification(buyerEmail,orderId);
 
-			var order = await _unitOfWork.Repository<Order>().GetByIdWithSpecAsync(spec);
+			var order = await _unitOfWork.Repository<Order>().GetEntityWithSpecAsync(spec);
 			
 			return order;
 		}
