@@ -51,6 +51,11 @@ namespace Talabat.APIs
 			webApplicationBuilder.Services.AddScoped(typeof(IBasketRepository),typeof(BasketRepository));
 
 			webApplicationBuilder.Services.AddApplicationServices();
+			webApplicationBuilder.Services.AddCors(options =>
+			{
+				options.AddPolicy("MyPolicy", options =>
+				options.AllowAnyHeader().AllowAnyMethod().WithOrigins(webApplicationBuilder.Configuration["FrontBaseUrl"]));
+			});
 
 
 			#endregion
@@ -94,8 +99,8 @@ namespace Talabat.APIs
 
 			app.UseHttpsRedirection();
 
-			app.UseStaticFiles(); 
-
+			app.UseStaticFiles();
+			app.UseCors("MyPolicy");
 			app.UseAuthentication();
 			app.UseAuthorization();
 			
