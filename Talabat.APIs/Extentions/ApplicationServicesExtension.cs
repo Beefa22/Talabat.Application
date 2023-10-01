@@ -24,6 +24,7 @@ namespace Talabat.APIs.Extentions
 
 			services.AddScoped<IPaymentService, PaymentSerivce>();
 
+			services.AddSingleton<IResponseCacheService,ResponseCacheService>();
 			//webApplicationBuilder.Services.AddAutoMapper(M => M.AddProfile(new MappingProfiles()));
 			services.AddAutoMapper(typeof(MappingProfiles));
 

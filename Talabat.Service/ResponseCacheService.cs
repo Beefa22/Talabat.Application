@@ -8,7 +8,7 @@ using Talabat.Core.Services;
 
 namespace Talabat.Service
 {
-    internal class ResponseCacheService : IResponseCacheService
+    public class ResponseCacheService : IResponseCacheService
     {
         private readonly IDatabase _database;
 
@@ -30,7 +30,7 @@ namespace Talabat.Service
         public async Task<string> GetCachedResponseAsync(string cacheKey)
         {
             var cachedResponse = await _database.StringGetAsync(cacheKey);
-            if (string.IsNullOrEmpty(cachedResponse)) return null;
+            if (cachedResponse.IsNullOrEmpty) return null;
             return cachedResponse;
         }
     }
