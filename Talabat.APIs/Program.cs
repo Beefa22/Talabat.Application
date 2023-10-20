@@ -21,46 +21,46 @@ namespace Talabat.APIs
 	{
 		public static async Task Main(string[] args)
 		{
-			var webApplicationBuilder = WebApplication.CreateBuilder(args);
+			var builder = WebApplication.CreateBuilder(args);
 
 			#region Configure Services
 			// Add services to the container.
 
-			webApplicationBuilder.Services.AddControllers();
+			builder.Services.AddControllers();
 
-			webApplicationBuilder.Services.AddSwaggerServices();
+			builder.Services.AddSwaggerServices();
 
-			webApplicationBuilder.Services.AddDbContext<StoreContext>(options=>
+			builder.Services.AddDbContext<StoreContext>(options=>
 			{
-				options.UseSqlServer(webApplicationBuilder.Configuration.GetConnectionString("DefaultConnection"));
+				options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
 			});
 
-			webApplicationBuilder.Services.AddSingleton<IConnectionMultiplexer>(options =>
+			builder.Services.AddSingleton<IConnectionMultiplexer>(options =>
 			{
-				var connection = webApplicationBuilder.Configuration.GetConnectionString("Redis");
+				var connection = builder.Configuration.GetConnectionString("Redis");
 				return ConnectionMultiplexer.Connect(connection);
 			});
 
-			webApplicationBuilder.Services.AddDbContext<AppIdentityDbContext>(options =>
+			builder.Services.AddDbContext<AppIdentityDbContext>(options =>
 			{
-				options.UseSqlServer(webApplicationBuilder.Configuration.GetConnectionString("IdentityConnection")); 
+				options.UseSqlServer(builder.Configuration.GetConnectionString("IdentityConnection")); 
 			});
 
-			webApplicationBuilder.Services.AddIdentityServices(webApplicationBuilder.Configuration);
+			builder.Services.AddIdentityServices(builder.Configuration);
 			
-			webApplicationBuilder.Services.AddScoped(typeof(IBasketRepository),typeof(BasketRepository));
+			builder.Services.AddScoped(typeof(IBasketRepository),typeof(BasketRepository));
 
-			webApplicationBuilder.Services.AddApplicationServices();
-			webApplicationBuilder.Services.AddCors(options =>
+			builder.Services.AddApplicationServices();
+			builder.Services.AddCors(options =>
 			{
 				options.AddPolicy("MyPolicy", options =>
-				options.AllowAnyHeader().AllowAnyMethod().WithOrigins(webApplicationBuilder.Configuration["FrontBaseUrl"]));
+				options.AllowAnyHeader().AllowAnyMethod().WithOrigins(builder.Configuration["FrontBaseUrl"]));
 			});
 
 
 			#endregion
 
-			var app = webApplicationBuilder.Build();
+			var app = builder.Build();
 
 			using var scope = app.Services.CreateScope(); //Create manual Scope [Explicitly]
 			//Note i used the keyword"using" to despose database connection [close the connection fo DB]
